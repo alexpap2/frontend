@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.inventory-controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+
+
+.inventory-container {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  background-color: #f9fafb;
+  max-width: 100%;
+  margin: 0 auto;
+  flex: 1;
+  padding: 20px 20px;
+  overflow-y: auto; /* scrolls only content, not the sidebar */
+  background: #eaf5ff;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.inventory-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.subtitle {
+  margin-top: 4px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.search-input {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 240px;
+}
+.search-button {
+  background-color: #34363b;
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.inventory-header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* sidebar*/
+.layout {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
