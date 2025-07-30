@@ -14,28 +14,18 @@ export default function Inventory() {
     const [query, setQuery] = useState('');
 
   async function fetchItems() {
-  try {
-    const res = await fetch(`/api?search=${encodeURIComponent(query)}`);
-    if (!res.ok) throw new Error('Fetch failed');
-    const data = await res.json();
-    setItems(data);
-  } catch (err) {
-    console.error(err);
+    try {
+      const res = await fetch(`/api?search=${encodeURIComponent(query)}`);
+      if (!res.ok) throw new Error('Fetch failed');
+      const data = await res.json();
+      setItems(data);
+    } catch (err) {
+      console.error(err);
+    }
   }
-}
 
-
-
-
-    useEffect(() => {
-    fetch('/api/')
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data);
-        setItems(data);
-      });
+  useEffect(() => {
+    fetchItems();
   }, []);
 
    useEffect(() => {
@@ -49,7 +39,7 @@ export default function Inventory() {
     clearTimeout(delay);
     controller.abort();
   };
-}, [query]);
+  }, [query]);
 
 
   function handleUpdateItem(updatedItem) {

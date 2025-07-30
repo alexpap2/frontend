@@ -9,7 +9,7 @@ export default function AddNewItem({setMenuOpen, setMenuPos}) {
 
     return (
         <>
-            <button onClick={handleClick}>Add New Item</button>
+          <button onClick={handleClick}>Add New Item</button>
         </>
     )
 }

@@ -25,7 +25,6 @@
   text-align: left;
 }
 
-
 .item-table input {
   width: 90%;
   padding: 0.75rem;
@@ -49,9 +48,8 @@
 .item-table th {
   background-color: #3f4242;
   color: #f3f3f3;
-  font-weight: 600;
+  font-weight: 550;
 }
-
 
 .item-table tr:hover {
   background-color: #dadada;
@@ -73,6 +71,7 @@
   padding: 0.2em 0.4em;
   user-select: none;
 }
+
 .settingsButtons button:hover {
   border-color: #1e1e23;
   transition: border-color 0.2s;
