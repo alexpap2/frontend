@@ -35,30 +35,6 @@
   object-fit: contain;
 }
 
-.addButtonPos a {
-  background-color: #3f4242;
-  text-decoration: none;
-  color: white;
-  padding: 0 1.5rem;
-  text-align: center;
-  margin: 0 auto;
-  border: none;
-  text-wrap: nowrap;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  padding-top: 0.9rem;
-}
-.addButtonPos a:hover {
-  background-color: #211d1d;
-}
-.addButtonPos {
-  display:flex;   
-  margin-bottom: 20px;
-  height: 50px;
-}
-
 .app-name h3 {
   font-size: 16px;
   margin: 0;
@@ -80,8 +56,13 @@
 .nav-links a {
   text-decoration: none;
   color: #111827;
-  font-size: 14px;
-  padding: 10px 12px;
-  border-radius: 8px;
+  font-size: 16px;
+  padding: 5px;
+  border-bottom: 1px solid transparent;
   transition: background 0.2s;
+}
+
+.nav-links a:hover{
+  border-color: #111827;
+  transition: border-color 0.2s;
 }

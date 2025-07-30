@@ -1,9 +1,10 @@
 import './../Styles/Sidebar.css';
-import { useNavigate } from 'react-router-dom';
 import logo from './edp_logo.png';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Sidebar() {
+
   return (
     <aside className="sidebar">
         <div className="sidebar-header">
@@ -12,10 +13,6 @@ function Sidebar() {
             <p className = 'sidebar-subtitle'>Inventory System</p>
           </div>
         </div>
-        <div className='addButtonPos'>
-          <Link to="/add">Add New Item</Link>
-        </div>
-    
         <nav className="nav-links">
           <Link to="/">Inventory</Link>
         </nav>

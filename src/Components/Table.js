@@ -1,7 +1,7 @@
 import './../Styles/Table.css'
 import TableItem from './TableItem.js';
 
-export function Table({ items, setItems }) {
+export function Table({ items, handleUpdateItem, handleDeleteItem }) {
   return (
     <div className="table-div">
       <table className="item-table">
@@ -14,25 +14,18 @@ export function Table({ items, setItems }) {
         </thead>
         <tbody>
           {(items && items.length > 0) ? (
-            items.map(item => <TableItem key={item.id} item={item} onUpdateItem={handleUpdateItem} />)
+            items.map(item => <TableItem key={item.id} item={item} onUpdateItem={handleUpdateItem} onDeleteItem={handleDeleteItem} />)
           ) : (
             <tr>
-              <td colSpan="...">No items found</td>
+              <td colSpan="7">No items found</td>
             </tr>
           )}
         </tbody>
       </table>
     </div>
   );
+}
 
-  function handleUpdateItem(updatedItem) {
-  setItems(prevItems =>
-    prevItems.map(item =>
-      item.id === updatedItem.id ? updatedItem : item
-    )
-  );
-}
-}
 
 
 export default Table;

@@ -1,8 +1,8 @@
 import './../Styles/Form.css';
-import { useNavigate, Link } from 'react-router-dom';
+import { useRef, useEffect } from 'react';
 
-export default function Form() {
-    const navigate = useNavigate();
+export default function Form({setMenuOpen, fetchItems}) {
+    const formRef = useRef();
 
     function addItem(formdata) {
         //creates an object from the form data
@@ -20,20 +20,33 @@ export default function Form() {
             alert('Failed to add Item!');
             throw new Error('Failed to add item');
         }    
-        //return response.json();
     })
     .then(result => {
         console.log('Item added successfully:', result);
-        navigate("/");
-
+        setMenuOpen(false);
+        fetchItems();
     })
     .catch(error => {
         console.error('Error adding item:', error);
     });
-}
+    }
+
+    useEffect(() => {
+    function handleClickOutside(e) {
+      if (formRef.current && !formRef.current.contains(e.target)) {
+        setMenuOpen(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+    }, [setMenuOpen]);
 
     return (
-        <>
+        <div ref={formRef}>
         <form action = {addItem} className='formStyle'>
             <h1>Item Form</h1>
             <label htmlFor = "code" className='name'>Code</label>
@@ -58,9 +71,8 @@ export default function Form() {
 
             <div className='footer' >
             <button className = 'submitButton' type = "submit">Create Item</button>
-            <Link className = 'nav' to='/'>Return to Inventory</Link>
             </div>
         </form>
-        </>
+        </div>
     )
 }

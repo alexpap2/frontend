@@ -55,6 +55,7 @@
 }
 
 .search-input {
+  font-family: 'Inter', sans-serif;
   margin-top: 0.75rem;
   padding: 10px 15px;
   font-size: 14px;
@@ -62,15 +63,24 @@
   border: 1px solid #ccc;
   width: 240px;
 }
-.search-button {
-  background-color: #34363b;
-  color: rgb(255, 255, 255);
-  font-size: 14px;
-  padding: 10px;
-  margin-bottom: 16px;
+.inventory-controls button {
+  font-family: 'Inter', sans-serif;
+  background-color: #3f4242;
+  text-decoration: none;
+  color: white;
+  padding: 0 0.75rem;
+  margin-top: 0.8rem;
+  margin-bottom: 1.05rem;
+  text-align: center;
   border: none;
-  border-radius: 6px;
+  text-wrap: nowrap;
+  border-radius: 4px;
+  font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.2s;
+}
+.inventory-controls button:hover {
+  background-color: #211d1d;
 }
 
 .inventory-header h2 {

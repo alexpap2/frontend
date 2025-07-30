@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function TableItem({ item , onUpdateItem }) {
+export default function TableItem({ item , onUpdateItem, onDeleteItem }) {
   const { code, type, specs, category, quantity, location, id } = item;
   const [isEditing, setEditing] = useState(false);
 
@@ -51,7 +51,7 @@ export default function TableItem({ item , onUpdateItem }) {
     })
       .then(res => {
         if (!res.ok) throw new Error("Failed to delete");
-        window.location.reload(); // replace later
+        onDeleteItem(item);
       })
       .catch(err => {
         console.error("Error deleting item:", err);
