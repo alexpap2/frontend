@@ -70,7 +70,7 @@ export default function App() {
           {/* <button className='search-button'>search</button> */}
         </div>
       </div>
-    <Table items = {items}></Table>
+    <Table items = {items} setItems={setItems}></Table>
   </div>
   </div>
   )

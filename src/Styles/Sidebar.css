@@ -8,8 +8,8 @@
 /* Sidebar */
 .sidebar {
   width: 150px;
-  background-color: #fafff3;
-  border-right: 1px solid #eee;
+  background-color: #f6f6f6;
+  border-right: 1px solid #d5d5d5;
   padding: 24px 16px;
   display: flex;
   flex-direction: column;
@@ -45,7 +45,9 @@
   cursor: pointer;
   transition: background-color 0.2s;
 }
-
+.addButtonPos button:hover {
+  background-color: #211d1d;
+}
 .addButtonPos {
   display:flex;   
   margin-bottom: 20px;

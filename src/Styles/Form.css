@@ -1,7 +1,4 @@
-body {
-  background-color: rgb(214, 210, 210);
-}
-form {
+.formStyle {
   margin:0 auto;
   padding: 2rem;
   /* place-items: center; */
@@ -13,17 +10,11 @@ form {
   width: 100%;
 }
 
-fieldset {
-  border: none;
-  margin: 0;
-  padding: 0;
-}
-
 #quantity {
     width:15%;
 }
 
-label {
+.name {
     margin-left: 0.25rem;
   display: block;
   margin-bottom: 0.25rem;
@@ -31,7 +22,7 @@ label {
   color: #333;
 }
 
-input {
+.inputField {
   width: 75%;
   padding: 0.75rem;
   border: 1px solid #ccc;
@@ -40,9 +31,14 @@ input {
   font-size: 1rem;
   transition: border-color 0.2s;
 }
+.inputField:hover {
+  border-color: rgba(44, 44, 44, 0.5);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.01);
+}
 
-input:focus, textarea:focus, select:focus {
-  border-color: #007BFF;
+.inputField:focus {
+  border-color: #011e3d;
   outline: none;
   box-shadow: 0 0 0 2px rgba(0,123,255,0.1);
 }

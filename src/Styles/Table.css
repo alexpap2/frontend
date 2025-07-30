@@ -25,15 +25,36 @@
   text-align: left;
 }
 
+
+.item-table input {
+  width: 90%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.item-table input:hover {
+  border-color: rgba(167, 167, 167, 0.01);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.01);
+}
+.item-table input:focus {
+  border-color: #011e3d;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.1);
+}
+
 .item-table th {
   background-color: #3f4242;
-  color: #d8d8d8;
+  color: #f3f3f3;
   font-weight: 600;
 }
 
 
 .item-table tr:hover {
-  background-color: #dbdbdb;
+  background-color: #dadada;
 }
 
 .settingsButtons {
@@ -41,7 +62,7 @@
   gap: 10px;
 }
 
-.settingsButtons a {
+.settingsButtons button {
   text-decoration: none;
   color: #111827;
   font-size: 16px;
@@ -49,8 +70,10 @@
   transition: background 0.2s;
   border: 1px solid transparent;
   padding: 0.2em 0.4em;
-
+  user-select: none;
 }
-.settingsButtons a:hover {
+.settingsButtons button:hover {
   border-color: #1e1e23;
+  transition: border-color 0.2s;
+  cursor: pointer;
 }

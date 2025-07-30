@@ -1,6 +1,7 @@
 import './../Styles/Table.css'
+import TableItem from './TableItem.js';
 
-export function Table({ items }) {
+export function Table({ items, setItems }) {
   return (
     <div className="table-div">
       <table className="item-table">
@@ -13,7 +14,7 @@ export function Table({ items }) {
         </thead>
         <tbody>
           {(items && items.length > 0) ? (
-            items.map(item => <TableRow key={item.id} item={item} />)
+            items.map(item => <TableItem key={item.id} item={item} onUpdateItem={handleUpdateItem} />)
           ) : (
             <tr>
               <td colSpan="...">No items found</td>
@@ -23,43 +24,15 @@ export function Table({ items }) {
       </table>
     </div>
   );
-}
 
-function TableRow({ item }) {
-  const { code, type, specs, category, quantity, location, id } = item;
-
-  function handleDelete(e) {
-    e.preventDefault();
-    if (!window.confirm("Are you sure you want to delete this item?")) return;
-
-    fetch(`/api/${id}`, {
-      method: 'DELETE',
-    })
-    .then(res => {
-      if (!res.ok) throw new Error("Failed to delete");
-      window.location.reload();
-    })
-    .catch(err => {
-      console.error("Error deleting item:", err);
-      alert("Failed to delete item.");
-    });
-  }
-
-  return (
-    <tr>
-      <td>{code}</td>
-      <td>{type}</td>
-      <td>{specs}</td>
-      <td>{category}</td>
-      <td>{quantity}</td>
-      <td>{location}</td>
-      <td>
-        <div className='settingsButtons'>
-          <a href={`/edit/${id}`}>Edit</a>
-          <a href="/" onClick={handleDelete}>Delete</a>
-        </div>
-      </td>
-    </tr>
+  function handleUpdateItem(updatedItem) {
+  setItems(prevItems =>
+    prevItems.map(item =>
+      item.id === updatedItem.id ? updatedItem : item
+    )
   );
 }
+}
+
+
 export default Table;
