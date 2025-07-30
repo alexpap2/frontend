@@ -1,6 +1,7 @@
 import './../Styles/Sidebar.css';
 import { useNavigate } from 'react-router-dom';
 import logo from './edp_logo.png';
+import { Link } from 'react-router-dom';
 
 function Sidebar() {
   return (
@@ -12,23 +13,14 @@ function Sidebar() {
           </div>
         </div>
         <div className='addButtonPos'>
-          <NewButton className = 'addButton'/>
+          <Link to="/add">Add New Item</Link>
         </div>
     
         <nav className="nav-links">
-          <a href="/search" className="nav-link active">Detailed Search</a>
-          <a href="/">Inventory</a>
+          <Link to="/">Inventory</Link>
         </nav>
     </aside>
     )
 
-    function NewButton() {
-        const navigate = useNavigate();
-
-        const buttonHandler = () => {
-        navigate("/add");
-        }    
-        return <button onClick = {buttonHandler}>Add New Item</button>
-    }
 }
 export default Sidebar;

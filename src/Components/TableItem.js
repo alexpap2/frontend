@@ -69,8 +69,8 @@ export default function TableItem({ item , onUpdateItem }) {
       <td><input name="location" value={formData.location} onChange={handleChange} /></td>
       <td>
         <div className="settingsButtons">
-          <button onClick={() => setEditing(false)}>Cancel</button>
           <button onClick={handleSave}>Save</button>
+          <button onClick={() => setEditing(false)}>Cancel</button>
         </div>
       </td>
     </tr>

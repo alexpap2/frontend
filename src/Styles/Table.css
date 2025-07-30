@@ -63,6 +63,7 @@
 }
 
 .settingsButtons button {
+  font-family: 'Inter', sans-serif;
   text-decoration: none;
   color: #111827;
   font-size: 16px;

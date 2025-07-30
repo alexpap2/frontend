@@ -35,17 +35,22 @@
   object-fit: contain;
 }
 
-.addButtonPos button {
+.addButtonPos a {
   background-color: #3f4242;
+  text-decoration: none;
   color: white;
   padding: 0 1.5rem;
+  text-align: center;
+  margin: 0 auto;
   border: none;
+  text-wrap: nowrap;
   border-radius: 4px;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.2s;
+  padding-top: 0.9rem;
 }
-.addButtonPos button:hover {
+.addButtonPos a:hover {
   background-color: #211d1d;
 }
 .addButtonPos {

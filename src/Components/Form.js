@@ -1,5 +1,5 @@
 import './../Styles/Form.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 export default function Form() {
     const navigate = useNavigate();
@@ -58,7 +58,7 @@ export default function Form() {
 
             <div className='footer' >
             <button className = 'submitButton' type = "submit">Create Item</button>
-            <a className = 'nav' href='/'>Return to Inventory</a>
+            <Link className = 'nav' to='/'>Return to Inventory</Link>
             </div>
         </form>
         </>
