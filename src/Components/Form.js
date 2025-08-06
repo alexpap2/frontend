@@ -49,20 +49,20 @@ export default function Form({setMenuOpen, fetchItems}) {
         <div ref={formRef}>
         <form action = {addItem} className='formStyle'>
             <h1>Item Form</h1>
-            <label htmlFor = "code" className='name'>Code</label>
+            <label htmlFor = "code" className='name'>Code *</label>
             <input name = "code" className='inputField'
             placeholder = "enter a code..." required />
-            <label htmlFor = "type" className='name'>Type</label>
+            <label htmlFor = "type" className='name'>Type *</label>
             <input name = "type" className='inputField'
             placeholder="enter a type..." required />
-            <label name = "specs" className='name'>Specifications:</label>
+            <label name = "specs" className='name'>Specifications</label>
             <input name = "specs" className='inputField'
             placeholder="enter some specs..." />
-            <label htmlFor = "category" className='name'>Category</label>
+            <label htmlFor = "category" className='name'>Category *</label>
             <input name = "category" className='inputField'
             placeholder="enter a category..." required />
-            <label htmlFor = "quantity" className='name'>Stock</label>
-            <input name = "quantity" type = "number" id = "quantity" className='inputField'
+            <label htmlFor = "quantity" className='name'>Stock *</label>
+            <input name = "quantity" type = "number" min="0" id = "quantity" className='inputField'
             required />
             <label htmlFor = "location" className='name'>Location</label>
             <input name = "location" className='inputField'

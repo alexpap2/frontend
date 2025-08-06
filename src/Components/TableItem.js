@@ -30,10 +30,10 @@ export default function TableItem({ item , onUpdateItem, onDeleteItem }) {
     })
       .then(res => {
         if (!res.ok) throw new Error("Failed to update");
-        return res.json(); // assume backend returns updated item
+        return res.json();
     })
       .then(updatedItem => {
-        onUpdateItem(updatedItem);  // notify parent of the change
+        onUpdateItem(updatedItem);
         setEditing(false);
     })
       .catch(err => {
@@ -65,7 +65,7 @@ export default function TableItem({ item , onUpdateItem, onDeleteItem }) {
       <td><input name="type" value={formData.type} onChange={handleChange} required /></td>
       <td><input name="specs" value={formData.specs} onChange={handleChange} /></td>
       <td><input name="category" value={formData.category} onChange={handleChange} required /></td>
-      <td><input name="quantity" type="number" value={formData.quantity} onChange={handleChange} required /></td>
+      <td><input name="quantity" type="number" min="0" value={formData.quantity} onChange={handleChange} required /></td>
       <td><input name="location" value={formData.location} onChange={handleChange} /></td>
       <td>
         <div className="settingsButtons">
